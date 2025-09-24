@@ -365,12 +365,12 @@ def allocate():
     """Allocate IP range for a lab environment"""
     try:
         data = request.get_json()
-        if not data or 'name' not in data:
-            return jsonify({'error': 'name is required'}), 400
+        if not data or 'lab_uid' not in data:
+            return jsonify({'error': 'lab_uid is required'}), 400
         
-        lab_uid = data['name']
+        lab_uid = data['lab_uid']
         if not lab_uid or not isinstance(lab_uid, str):
-            return jsonify({'error': 'name must be a non-empty string'}), 400
+            return jsonify({'error': 'lab_uid must be a non-empty string'}), 400
         
         # Get cluster parameter, default to "default" if not provided
         cluster = data.get('cluster', 'default')
@@ -461,10 +461,10 @@ def deallocate():
     """Deallocate IP range for a lab environment"""
     try:
         data = request.get_json()
-        if not data or 'name' not in data:
-            return jsonify({'error': 'name is required'}), 400
+        if not data or 'lab_uid' not in data:
+            return jsonify({'error': 'lab_uid is required'}), 400
         
-        lab_uid = data['name']
+        lab_uid = data['lab_uid']
         # Get cluster parameter, default to "default" if not provided
         cluster = data.get('cluster', 'default')
         if not isinstance(cluster, str):

@@ -31,7 +31,7 @@
       headers: "{{ http_headers }}"
       body_format: json
       body:
-        name: "{{ lab_uid }}"
+        lab_uid: "{{ lab_uid }}"
         cluster: "{{ cluster }}"
       status_code: 201
       return_content: yes

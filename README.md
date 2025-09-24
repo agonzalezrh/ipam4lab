@@ -302,7 +302,7 @@ IPAM4Lab supports multiple clusters with overlapping IP ranges. This allows the 
 # Allocate IPs for a lab in a specific cluster
 curl -X POST https://ipam4lab.example.com/allocate \
   -H "Content-Type: application/json" \
-  -d '{"name": "my-lab", "cluster": "ocpv04"}'
+  -d '{"lab_uid": "my-lab", "cluster": "ocpv04"}'
 
 # Get allocation for a specific cluster
 curl "https://ipam4lab.example.com/allocation/my-lab?cluster=ocpv04"
@@ -313,7 +313,7 @@ curl "https://ipam4lab.example.com/allocations?cluster=ocpv04"
 # Deallocate from a specific cluster
 curl -X DELETE https://ipam4lab.example.com/deallocate \
   -H "Content-Type: application/json" \
-  -d '{"name": "my-lab", "cluster": "ocpv04"}'
+  -d '{"lab_uid": "my-lab", "cluster": "ocpv04"}'
 ```
 
 **Ansible Usage:**
