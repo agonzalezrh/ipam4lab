@@ -135,6 +135,8 @@ class IPAMManager:
         protected_ranges = [
             ipaddress.IPv4Network('192.168.0.0/24'),    # First subnet - often used for infrastructure
             ipaddress.IPv4Network('192.168.1.0/24'),    # Second subnet - often used for infrastructure  
+            ipaddress.IPv4Network('192.168.2.0/24'),    # Third subnet - often used for infrastructure  
+            ipaddress.IPv4Network('192.168.3.0/24'),    # Fourth subnet - often used for infrastructure  
             ipaddress.IPv4Network('192.168.255.0/24'),  # Last subnet - often used for management
             ipaddress.IPv4Network('192.168.254.0/24'),  # Second to last - often used for management
         ]
